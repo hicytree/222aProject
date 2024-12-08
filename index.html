@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+        }
+        .gallery img {
+            max-width: 300px;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            transition: transform 0.2s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+            border-color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; margin-top: 20px;">My Photo Gallery</h1>
+    <div class="gallery">
+	<img src="21.jpg" alt="Photo 1">
+	<img src="22.jpg" alt="Photo 1">
+	<img src="23.jpg" alt="Photo 1">
+	<img src="24.jpg" alt="Photo 1">
+	<img src="25.jpg" alt="Photo 1">
+	<img src="26.jpg" alt="Photo 1">
+	<img src="27.jpg" alt="Photo 1">
+	<img src="28.jpg" alt="Photo 1">
+	<img src="29.jpg" alt="Photo 1">
+    </div>
+</body>
+</html>
+
+
