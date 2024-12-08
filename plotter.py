@@ -3,19 +3,25 @@ import math
 
 cwnd_values = []
 ssthresh = []
-start_ssthresh = -1
+start_ssthresh = 0
 seconds = []
 with open('cwnd_log.txt') as cwnd_log:
     for log in cwnd_log:
         if 'time:' not in log:
             continue
+        
+        if " " in log:   
+            cwnd = (int(log[log.index("cwnd:") + 5: log[log.index("cwnd:"):].index(" ") + log.index("cwnd:")]))
+            if cwnd == 10:
+                continue
+            cwnd_values.append(cwnd)
+        else:
+            cwnd = (int(log[log.index("cwnd:") + 5:]))
+            if cwnd == 10:
+                continue
+            cwnd_values.append(cwnd)
 
         seconds.append(int(log[5:log.index(" ")]))
-        
-        if " " in log:
-            cwnd_values.append((int(log[log.index("cwnd:") + 5: log[log.index("cwnd:"):].index(" ") + log.index("cwnd:")])))
-        else:
-            cwnd_values.append((int(log[log.index("cwnd:") + 5:])))
 
         if ' ssthresh:' not in log:
             start_ssthresh = len(cwnd_values)
